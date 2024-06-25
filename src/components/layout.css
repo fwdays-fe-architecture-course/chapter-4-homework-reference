@@ -1,0 +1,271 @@
+html {
+    --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+    --font-title: "Quicksand", sans-serif;
+    --color-background: #fff;
+    --color-font: #333;
+    --color-font-contrast: #110202;
+    --color-primary: #09a39d;
+    --color-landing-hero: #2cede8;
+    --footer-height: 60px;
+    --footer-padding: 15px;
+}
+body {
+    background-color: var(--color-background);
+    color: var(--color-font);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    font-size: 100%;
+}
+body::after {
+    content: "";
+    display: block;
+    height: var(--footer-height); /* same as footer height */
+    padding: var(--footer-padding); /* same as footer height */
+}
+
+a:active,
+a:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
+}
+
+/* Header */
+
+nav {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    padding: 15px 0;
+}
+
+.nav-link-home {
+    order: 1;
+    width: 120px;
+}
+.nav-link-container {
+    order: 2;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-font);
+    font-size: 100%;
+    margin: 0.5em;
+    display: inline-flex;
+}
+
+nav a:focus,
+nav a:hover {
+    color: var(--color-primary);
+}
+
+nav a svg {
+    color: var(--color-primary);
+    width: 1.2em;
+    height: auto;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+/* Landing element */
+
+.landing h1 {
+    color: white;
+    font-size: 250%;
+    margin-bottom: 0;
+}
+
+.landing p {
+    margin-top: 3px;
+    color: var(--color-landing-hero);
+    font-size: 115%;
+    font-weight: bold;
+}
+
+.landing-links {
+    display: flex;
+    margin: 0 -0.5rem;
+    margin-top: 2rem;
+}
+.landing-links a {
+    align-items: center;
+    background-color: var(--color-landing-hero);
+    border: 2px solid var(--color-landing-hero);
+    border-radius: 2rem;
+    box-sizing: border-box;
+    color: var(--color-font-contrast);
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    padding: 0.5rem 0.8rem;
+    width: auto;
+    text-decoration: none;
+}
+.landing-links a:link {
+    color: var(--color-font-contrast);
+}
+.landing-links a:hover,
+.landing-links a:focus,
+.landing-links a:active {
+    background-color: var(--color-background);
+    border-color: var(--color-landing-hero);
+    color: var(--color-font);
+    text-decoration: none;
+}
+.landing-links a:visited:not(:hover) {
+    color: var(--color-font-contrast);
+}
+.landing-links > * {
+    margin: 0.5rem;
+}
+
+/* Main view */
+
+.home-inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-inner > section {
+    max-width: 960px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.home-inner p {
+    text-align: justify;
+}
+
+.home-inner a {
+    color: var(--color-primary);
+}
+
+.home-layout {
+    display: flex;
+    padding-bottom: 2rem;
+    width: 100%;
+}
+
+.home-inner h2 svg,
+.home-inner h3 svg {
+    vertical-align: -0.14em;
+    color: var(--color-primary);
+    margin-right: 3px;
+}
+
+.about .portrait {
+    border-radius: 50%;
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin-right: 3rem;
+    shape-outside: circle();
+}
+
+.page-wrapper {
+    padding: 10px 35px;
+}
+
+.research-images {
+    float: right;
+    margin: 0 0 5px 30px;
+    text-align: center;
+    width: 200px;
+}
+
+.research-images figcaption {
+    margin-top: 5px;
+    font-style: italic;
+    font-size: 60%;
+}
+
+.publications-abstracts {
+    font-size: 70%;
+    display: inline-block;
+}
+
+/* Blog */
+
+.blog-list-item {
+    padding: 15px;
+    border: 2px #9648ee solid;
+    border-radius: 5px;
+}
+
+.blog-list-item a {
+    font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--color-primary);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--footer-padding) 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+}
+
+.footer-content {
+    padding: 0 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--color-font-contrast);
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active {
+    color: var(--color-font);
+    text-decoration: none;
+}
+
+/* For breaking to a new row in flexbox */
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+/* responsiveness: adjust font and image sizes on smaller screens */
+@media screen and (max-width: 400px) {
+    nav a {
+        font-size: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    nav a {
+        font-size: 120%;
+    }
+    .home-inner > section {
+        font-size: 110%;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .home-inner > section {
+        font-size: 125%;
+    }
+    .about .portrait {
+        width: 350px;
+        height: 350px;
+        margin-bottom: 1em;
+    }
+}
