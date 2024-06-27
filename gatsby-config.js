@@ -1,5 +1,5 @@
 const path = require("path");
-const netlifyAdapter = require("gatsby-adapter-netlify");
+const netlifyAdapter = require("gatsby-adapter-netlify").default;
 
 module.exports = {
   siteMetadata: {
@@ -52,7 +52,8 @@ module.exports = {
       },
     },
   ],
-  adapter: adapter({
+  adapter: netlifyAdapter({
     excludeDatastoreFromEngineFunction: false,
+    imageCDN: true,
   }),
 };
