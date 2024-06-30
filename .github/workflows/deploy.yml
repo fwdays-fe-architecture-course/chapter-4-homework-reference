@@ -17,17 +17,10 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies
+      - name: Build Gatsby website
         run: |
           cd ./web-app
           npm install
-          cd ../
-          cd ./infrastructure
-          npm install
-
-      - name: Build Gatsby site
-        run: |
-          cd ./web-app
           npm run build
 
   deploy:
@@ -52,6 +45,7 @@ jobs:
         run: |
           cd ./infrastructure
           npm install -g aws-cdk
+          npm install
           npm run build
           cdk bootstrap --require-approval never
           cdk synth --require-approval never
