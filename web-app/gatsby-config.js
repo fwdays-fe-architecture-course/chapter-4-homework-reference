@@ -4,7 +4,7 @@ const netlifyAdapter = require("gatsby-adapter-netlify").default;
 module.exports = {
   siteMetadata: {
     title: "Anton Khudiakov",
-    description: "Front End Software Engineer",
+    description: "Front End Software Engineer II",
     author: "Anton Khudiakov",
     social: {
       x: "https://twitter.com/ahoodiakov",
