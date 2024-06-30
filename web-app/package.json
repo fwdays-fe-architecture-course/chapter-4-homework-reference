@@ -31,5 +31,8 @@
     "react-icons": "^5.2.1",
     "typeface-quicksand": "^1.1.13",
     "typeface-source-sans-pro": "^1.1.13"
+  },
+  "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.32"
   }
 }
