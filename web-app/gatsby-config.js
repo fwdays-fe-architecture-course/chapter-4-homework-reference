@@ -11,7 +11,8 @@ module.exports = {
       github: "https://github.com/akhudiakov97",
       linkedIn: "https://www.linkedin.com/in/ahoodiakov/",
     },
-    icon: "src/images/favicon-32x32.png",
+    image: `/favicon.png`,
+    icon: "/favicon.png",
   },
   plugins: [
     {
