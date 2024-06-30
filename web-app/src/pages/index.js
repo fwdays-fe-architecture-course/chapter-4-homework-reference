@@ -4,6 +4,7 @@ import { GutterLeft, GutterRight } from "../components/gutter/gutter";
 import Landing from "../components/landing/landing";
 import About from "../components/home-about";
 import Contact from "../components/home-contact";
+import { SEO } from "../components/seo";
 
 const Home = () => {
   return (
@@ -26,3 +27,7 @@ const Home = () => {
 };
 
 export default Home;
+
+export const Head = () => {
+  return <SEO title="Root" />;
+};

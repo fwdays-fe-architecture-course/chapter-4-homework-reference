@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 
 const CV = ({ data }) => {
   console.log("data", data);
@@ -45,3 +46,7 @@ export const query = graphql`
 `;
 
 export default CV;
+
+export const Head = () => {
+  return <SEO title="CV" />;
+};

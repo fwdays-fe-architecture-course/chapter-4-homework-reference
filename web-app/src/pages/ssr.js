@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from '../components/layout';
+import { SEO } from "../components/seo";
 
 const SSR = ({ serverData }) => {
   return (
@@ -57,3 +58,8 @@ export async function getServerData() {
 }
 
 export default SSR;
+
+
+export const Head = () => {
+  return <SEO title="SSR" />;
+};

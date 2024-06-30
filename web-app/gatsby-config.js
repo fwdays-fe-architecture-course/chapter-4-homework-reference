@@ -5,13 +5,14 @@ module.exports = {
   siteMetadata: {
     title: "Anton Khudiakov",
     description: "Front End Software Engineer",
-    author: "Anton Khudiakov !",
+    author: "Anton Khudiakov",
     social: {
       x: "https://twitter.com/ahoodiakov",
       github: "https://github.com/akhudiakov97",
       linkedIn: "https://www.linkedin.com/in/ahoodiakov/",
     },
-    icon: "src/images/favicon-32x32.png",
+    icon: "favicon.png",
+    image: "architectural-diagram-1.png",
   },
   plugins: [
     {
