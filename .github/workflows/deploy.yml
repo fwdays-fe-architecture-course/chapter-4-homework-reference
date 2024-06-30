@@ -40,4 +40,6 @@ jobs:
           npm install -g aws-cdk
           npm install
           npm run build
+          cdk bootstrap --require-approval never
+          cdk synth --require-approval never
           cdk deploy --require-approval never
