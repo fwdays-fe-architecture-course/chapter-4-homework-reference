@@ -10,7 +10,7 @@ export const useCloudWatchRum = () => {
       enableXRay: false,
     };
 
-    const APPLICATION_ID = "dc25f894-a92d-4f28-a958-ff50d2acd685";
+    const APPLICATION_ID = '50a2b351-4490-4188-b80f-211992a268e7';
     const APPLICATION_VERSION = "1.0.0";
     const APPLICATION_REGION = "eu-central-1";
 
