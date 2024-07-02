@@ -7,6 +7,7 @@ import Contact from "../components/home-contact";
 import { SEO } from "../components/seo";
 
 const Home = () => {
+  console.log('Hello from July 2');
   return (
     <Layout pageTitle="Home Page">
       <Landing />
