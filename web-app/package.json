@@ -17,6 +17,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "aws-rum-web": "^1.18.0",
     "gatsby": "^5.13.5",
     "gatsby-adapter-netlify": "^1.1.6",
     "gatsby-plugin-emotion": "^8.13.1",

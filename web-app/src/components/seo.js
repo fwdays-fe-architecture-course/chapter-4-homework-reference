@@ -1,6 +1,7 @@
 import React from "react";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import favicon from "../images/favicon.png";
+import { useCloudWatchRum } from "../hooks/useCloudWatchRum";
 
 export const SEO = ({ title, description, children }) => {
   const {
@@ -9,6 +10,8 @@ export const SEO = ({ title, description, children }) => {
     image,
     icon,
   } = useSiteMetadata();
+
+  useCloudWatchRum();
 
   const seo = {
     title: title || defaultTitle,
