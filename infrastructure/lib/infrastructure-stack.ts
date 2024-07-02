@@ -3,6 +3,7 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import { BucketDeployment, Source } from "aws-cdk-lib/aws-s3-deployment";
+import * as rum from 'aws-cdk-lib/aws-rum';
 import { Construct } from "constructs";
 
 export class InfrastructureStack extends cdk.Stack {
@@ -48,6 +49,12 @@ export class InfrastructureStack extends cdk.Stack {
       sources: [Source.asset("../web-app/public")],
       destinationBucket: websiteBucket,
       distribution,
+    });
+
+
+    const monitor = new rum.CfnAppMonitor(this, 'MyAppMonitor', {
+      domain: distribution.domainName,
+      name: 'MyWebsiteRumMonitor'
     });
   }
 }
