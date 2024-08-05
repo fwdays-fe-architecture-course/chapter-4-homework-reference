@@ -5,12 +5,12 @@ import Landing from "../components/landing/landing";
 import About from "../components/home-about";
 import Contact from "../components/home-contact";
 import { SEO } from "../components/seo";
-import {useCloudWatchRum} from '../hooks/useCloudWatchRum'
+import { useCloudWatchRum } from "../hooks/useCloudWatchRum";
 
 const Home = () => {
   useCloudWatchRum();
   return (
-    <Layout pageTitle="Home Page">r
+    <Layout pageTitle="Home Page">
       <Landing />
       <div className="home-layout">
         <GutterLeft />
