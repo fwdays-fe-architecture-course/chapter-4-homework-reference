@@ -2,9 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import { SEO } from "../components/seo";
+import { useCloudWatchRum } from "../hooks/useCloudWatchRum";
 
 const CV = ({ data }) => {
-  console.log("data", data);
+  useCloudWatchRum();
   const cv = data.allMarkdownRemark.edges[0]?.node; // Safe access with optional chaining
 
   return (
@@ -32,15 +33,15 @@ const CV = ({ data }) => {
 
 export const query = graphql`
   query CVQuery {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/cv.md$/" } }){
-        edges {
-            node {
-                html
-                frontmatter {
-                    title
-                }
-            }
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/cv.md$/" } }) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+          }
         }
+      }
     }
   }
 `;

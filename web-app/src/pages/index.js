@@ -5,11 +5,12 @@ import Landing from "../components/landing/landing";
 import About from "../components/home-about";
 import Contact from "../components/home-contact";
 import { SEO } from "../components/seo";
+import {useCloudWatchRum} from '../hooks/useCloudWatchRum'
 
 const Home = () => {
-  console.log('Hello from July 2');
+  useCloudWatchRum();
   return (
-    <Layout pageTitle="Home Page">
+    <Layout pageTitle="Home Page">r
       <Landing />
       <div className="home-layout">
         <GutterLeft />

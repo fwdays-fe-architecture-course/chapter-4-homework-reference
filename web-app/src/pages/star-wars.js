@@ -2,8 +2,11 @@ import React from "react";
 import Layout from "../components/layout";
 import { useStaticQuery, graphql } from "gatsby";
 import { SEO } from "../components/seo";
+import { useCloudWatchRum } from "../hooks/useCloudWatchRum";
 
 const StarWars = () => {
+  useCloudWatchRum();
+
   const data = useStaticQuery(graphql`
     query {
       allStarWarsCharacter {

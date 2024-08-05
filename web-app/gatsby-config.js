@@ -58,9 +58,5 @@ module.exports = {
         ],
       },
     },
-  ],
-  adapter: netlifyAdapter({
-    excludeDatastoreFromEngineFunction: false,
-    imageCDN: true,
-  }),
+  ]
 };

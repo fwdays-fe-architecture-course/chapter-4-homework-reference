@@ -1,8 +1,10 @@
 import React from "react";
 import Layout from '../components/layout';
 import { SEO } from "../components/seo";
+import { useCloudWatchRum } from "../hooks/useCloudWatchRum";
 
 const SSR = ({ serverData }) => {
+  useCloudWatchRum();
   return (
     <Layout pageTitle="SSR">
       <div className="page-wrapper">
