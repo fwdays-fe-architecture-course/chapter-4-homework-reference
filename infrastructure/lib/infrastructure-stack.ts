@@ -12,22 +12,18 @@ export class InfrastructureStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
-      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-      objectOwnership: s3.ObjectOwnership.OBJECT_WRITER,
+ const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
+      websiteIndexDocument: "index.html",
+      websiteErrorDocument: "index.html",
+      publicReadAccess: true, // Required for CloudFront to access the website
     });
 
-    const originAccessIdentity = new cloudfront.OriginAccessIdentity(
-      this,
-      "OAI"
-    );
-
+    // Create CloudFront distribution
     const distribution = new cloudfront.Distribution(this, "Distribution", {
       defaultBehavior: {
         origin: new origins.S3Origin(websiteBucket, {
-          originAccessIdentity,
+          originPath: "/", // Use the root of the bucket
         }),
-        allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
       defaultRootObject: "index.html",
@@ -45,12 +41,12 @@ export class InfrastructureStack extends cdk.Stack {
       ],
     });
 
-    websiteBucket.grantRead(originAccessIdentity);
-
+    // Deploy website content to S3
     new BucketDeployment(this, "StaticWebsiteBucketDeployment", {
       sources: [Source.asset("../web-app/public")],
       destinationBucket: websiteBucket,
       distribution,
+      distributionPaths: ["/*"],
     });
 
     const applicationName = `cvWebsite`;
