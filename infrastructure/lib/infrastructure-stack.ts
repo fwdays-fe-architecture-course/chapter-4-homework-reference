@@ -16,6 +16,9 @@ export class InfrastructureStack extends cdk.Stack {
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "index.html",
       publicReadAccess: true, // Required for CloudFront to access the website
+      blockPublicAccess: new s3.BlockPublicAccess({
+        blockPublicPolicy: false,
+      }),
     });
 
     // Create CloudFront distribution
